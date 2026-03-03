@@ -6,12 +6,12 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.0": {
-      "MapV3/1.0.0": {
+      "Mapping_Channels/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.4"
         },
         "runtime": {
-          "MapV3.dll": {}
+          "Mapping_Channels.dll": {}
         }
       },
       "Newtonsoft.Json/13.0.4": {
@@ -25,7 +25,7 @@
     }
   },
   "libraries": {
-    "MapV3/1.0.0": {
+    "Mapping_Channels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

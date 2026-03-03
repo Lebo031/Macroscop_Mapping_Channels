@@ -169,11 +169,8 @@ class Program
                 switch (format)
                 {
                     case "json":
-                        string json = JsonConvert.SerializeObject(result, Formatting.Indented, new JsonSerializerSettings
-                        {
-                            StringEscapeHandling = StringEscapeHandling.EscapeNonAscii
-                        });
-                        await File.WriteAllTextAsync(tempFilename, json, new UTF8Encoding(false));
+                        string json = JsonConvert.SerializeObject(result, Formatting.Indented);
+                        await File.WriteAllTextAsync(tempFilename, json, Encoding.UTF8);
                         break;
 
                     case "txt":
@@ -185,7 +182,7 @@ class Program
                             txt.AppendLine($" Наблюдение: {string.Join(", ", item.Realtime)}");
                             txt.AppendLine();
                         }
-                        await File.WriteAllTextAsync(tempFilename, txt.ToString(), new UTF8Encoding(false));
+                        await File.WriteAllTextAsync(tempFilename, txt.ToString(), Encoding.UTF8);
                         break;
 
                     case "csv":
@@ -197,7 +194,7 @@ class Program
                             var realtimeStr = string.Join("|", item.Realtime);
                             csv.AppendLine($"{EscapeCsv(item.Group)};{EscapeCsv(archiveStr)};{EscapeCsv(realtimeStr)}");
                         }
-                        await File.WriteAllTextAsync(tempFilename, csv.ToString(), new UTF8Encoding(false));
+                        await File.WriteAllTextAsync(tempFilename, csv.ToString(), Encoding.UTF8);
                         break;
                 }
 
